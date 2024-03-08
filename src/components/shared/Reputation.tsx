@@ -8,7 +8,7 @@ const Reputation = () => {
         <div className="flex flex-col gap-[18px] w-5/6 md:w-[292px] h-[197px] mx-auto md:mx-[unset] p-[20px] border-[1.4px] border-[#e0e3eb] rounded-[4px]">
           <img
             className="w-[40px]"
-            src="/public/images/reputation/best-services.svg"
+            src="/images/reputation/best-services.svg"
             alt="Reputation Icon"
           />
           <h5 className="font-bold text-[#3d445c]">Best Services</h5>
@@ -19,7 +19,7 @@ const Reputation = () => {
         <div className="flex flex-col gap-[18px] w-5/6 md:w-[292px] h-[197px] mx-auto md:mx-[unset] p-[20px] border-[1.4px] border-[#e0e3eb] rounded-[4px]">
           <img
             className="w-[40px]"
-            src="/public/images/reputation/best-teams.svg"
+            src="/images/reputation/best-teams.svg"
             alt="Reputation Icon"
           />
           <h5 className="font-bold text-[#3d445c]">Best Services</h5>
@@ -30,7 +30,7 @@ const Reputation = () => {
         <div className="flex flex-col gap-[18px] w-5/6 md:w-[292px] h-[197px] mx-auto md:mx-[unset] p-[20px] border-[1.4px] border-[#e0e3eb] rounded-[4px]">
           <img
             className="w-[40px]"
-            src="/public/images/reputation/best-designs.svg"
+            src="/images/reputation/best-designs.svg"
             alt="Reputation Icon"
           />
           <h5 className="font-bold text-[#3d445c]">Best Services</h5>
