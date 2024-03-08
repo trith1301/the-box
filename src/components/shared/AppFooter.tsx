@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import { Container } from "@chakra-ui/react"
 
 import FacebookIcon from "./icons/FacebookIcon"
-import LinkedInIcon from "./icons/LinkedinIcon"
+import LinkedInIcon from "./icons/LinkedInIcon"
 import TwitterIcon from "./icons/TwitterIcon"
 
 import theBoxLogo from "../../assets/images/logo/wide-logo.svg"
