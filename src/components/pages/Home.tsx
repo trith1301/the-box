@@ -16,4 +16,3 @@ const Home = () => {
 
 export default Home
 
-// <Container maxW={["95%", "95%", "95%", "95%", "1200px"]} height="1200px"></Container>

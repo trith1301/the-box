@@ -19,7 +19,7 @@ const Advertisement = () => {
             </p>
           </div>
           <button
-            className="md:px-[12px] md:py-[6px] lg:px-[20px] lg:py-[16px] border-2 border-[#fffff] rounded-[2px] md:text-[14px] lg:text-[18px] text-white hover:text-black hover:bg-white"
+            className="p-[5px] md:px-[12px] md:py-[6px] lg:px-[20px] lg:py-[16px] border-2 border-[#fffff] rounded-[2px] md:text-[14px] lg:text-[18px] text-white hover:text-black hover:bg-white"
             type="button"
           >
             Get your consultation
