@@ -96,7 +96,7 @@ const FeatureProjectsCarousel = () => {
         <div className="hidden lg:grid grid-cols-2">
           <button
             onClick={prevSlide}
-            className="flex items-center justify-center gap-[10px] h-[40px] bg-[#292e3d] hover:opacity-90"
+            className="flex items-center justify-center gap-[10px] h-[40px] bg-[#292e3d] hover:bg-secondary"
             type="button"
           >
             <LeftArrow />
@@ -104,7 +104,7 @@ const FeatureProjectsCarousel = () => {
           </button>
           <button
             onClick={nextSlide}
-            className="flex flex-row-reverse items-center justify-center gap-[10px] h-[40px] bg-[#292e3d] hover:opacity-90"
+            className="flex flex-row-reverse items-center justify-center gap-[10px] h-[40px] bg-[#292e3d] hover:bg-secondary"
             type="button"
           >
             <RightArrow />
