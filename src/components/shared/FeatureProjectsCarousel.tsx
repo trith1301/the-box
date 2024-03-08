@@ -45,7 +45,7 @@ const FeatureProjectsCarousel = () => {
     setPinnedProject(FEATURE_PROJECTS[0])
 
     setCarouselOptions({
-      speed: 8000,
+      speed: 1000,
       dots: false,
       arrows: false,
       infinite: true,
