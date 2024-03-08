@@ -31,19 +31,15 @@ const AppHeader = () => {
   }
 
   return (
-    <header className="z-50 sticky top-0 left-0 right-0 flex items-center">
+    <header className="z-50 sticky top-0 left-0 right-0 flex items-center bg-white">
       <Container maxW={["95%", "95%", "95%", "95%", "1200px"]}>
-        <HStack
-          position="relative"
-          justify="space-between"
-          height="80px"
-          bg="white"
-        >
+        <HStack position="relative" justify="space-between" height="80px">
           <Link to="/">
             <Image src={logo} />
           </Link>
           <Box
             onClick={toggleMenu}
+            cursor="pointer"
             display={["block", "block", "block", "none"]}
             borderColor="#2947a9"
             backgroundColor="none"
@@ -66,41 +62,41 @@ const AppHeader = () => {
             backgroundColor={["white", "white", "white", "unset"]}
             display={isMenuOpen ? "flex" : "none"}
           >
-            <Link
+            <a
               onClick={toggleMenu}
               className="hover:text-secondary"
-              to="#home"
+              href="#home"
             >
               Home
-            </Link>
-            <Link
+            </a>
+            <a
               onClick={toggleMenu}
               className="hover:text-secondary"
-              to="#about-us"
+              href="#about-us"
             >
               About Us
-            </Link>
-            <Link
+            </a>
+            <a
               onClick={toggleMenu}
               className="hover:text-secondary"
-              to="#projects"
+              href="#projects"
             >
               Projects
-            </Link>
-            <Link
+            </a>
+            <a
               onClick={toggleMenu}
               className="hover:text-secondary"
-              to="#services"
+              href="#services"
             >
               Services
-            </Link>
-            <Link
+            </a>
+            <a
               onClick={toggleMenu}
               className="hover:text-secondary"
-              to="#contact-us"
+              href="#contact-us"
             >
               Contact Us
-            </Link>
+            </a>
           </HStack>
         </HStack>
       </Container>

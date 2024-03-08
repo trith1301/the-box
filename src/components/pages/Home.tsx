@@ -1,11 +1,13 @@
-import { Container } from "@chakra-ui/react"
+import FeatureProjectsCarousel from "../shared/FeatureProjectsCarousel"
 
 const Home = () => {
   return (
-    <Container maxW={["95%", "95%", "95%", "95%", "1200px"]} height="1200px">
-      <p>Home works!</p>
-    </Container>
+    <main className="overflow-hidden h-[2000px]">
+      <FeatureProjectsCarousel />
+    </main>
   )
 }
 
 export default Home
+
+// <Container maxW={["95%", "95%", "95%", "95%", "1200px"]} height="1200px"></Container>
