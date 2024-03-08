@@ -23,14 +23,21 @@ const FeatureProjectsCarousel = () => {
   }
 
   const prevSlide = () => {
-    const carousel = carouselRef.current
-    carousel.slickPrev()
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const carousel: any = carouselRef.current
+    if (carousel) {
+      carousel.slickPrev()
+    }
   }
 
   const nextSlide = () => {
-    const carousel = carouselRef.current
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const carousel: any = carouselRef.current
 
-    carousel.slickNext()
+    
+    if (carousel) {
+      carousel.slickNext()
+    }
   }
 
   useEffect(() => {
