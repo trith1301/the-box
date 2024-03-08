@@ -1,5 +1,7 @@
+import { useState } from "react"
 import { Link } from "react-router-dom"
-import { Container } from "@chakra-ui/react"
+import { useForm, SubmitHandler } from "react-hook-form"
+import { useToast, Container, Button } from "@chakra-ui/react"
 
 import FacebookIcon from "./icons/FacebookIcon"
 import LinkedInIcon from "./icons/LinkedInIcon"
@@ -7,7 +9,35 @@ import TwitterIcon from "./icons/TwitterIcon"
 
 import theBoxLogo from "../../assets/images/logo/wide-logo.svg"
 
+type Inputs = {
+  email: string
+}
+
 const AppFooter = () => {
+  const toast = useToast()
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false)
+  const { register, handleSubmit, reset } = useForm<Inputs>()
+
+  const pushNotification = () => {
+    toast({
+      title: "Newsletter Subscribed 👋",
+      description: "You will receive the newsletter ASAP",
+      status: "success",
+      position: "top-right",
+      duration: 4000,
+      isClosable: true,
+    })
+  }
+
+  const onSubmit: SubmitHandler<Inputs> = () => {
+    setIsSubmitting((current) => !current)
+    setTimeout(() => {
+      reset()
+      pushNotification()
+      setIsSubmitting((current) => !current)
+    }, 1000)
+  }
+
   return (
     <footer>
       <div className="flex items-center  bg-white">
@@ -25,7 +55,9 @@ const AppFooter = () => {
             <p className="font-medium text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] uppercase text-primary">
               Phone:
             </p>
-            <p className="text-[14px] sm:text-[16px] md:text-[18px]">+84 1102 2703</p>
+            <p className="text-[14px] sm:text-[16px] md:text-[18px]">
+              +84 1102 2703
+            </p>
             <p className="font-medium  text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] uppercase text-primary">
               Email:
             </p>
@@ -41,19 +73,34 @@ const AppFooter = () => {
               <p className="pb-[20px] font-medium text-[20px] uppercase text-primary">
                 Newsletter:
               </p>
-              <div className="flex flex-col lg:flex-row gap-[8px]">
+              <form
+                onSubmit={handleSubmit(onSubmit)}
+                className="flex flex-col lg:flex-row gap-[8px]"
+              >
                 <input
                   className="px-[8px] py-[10px] border-[1px] border-[#e0e3eb] rounded-[4px] focus:outline-secondary"
                   placeholder="Your email here"
-                  type="email"
+                  type="text"
+                  {...register("email", {
+                    required: true,
+                    pattern:
+                      /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/,
+                  })}
                 />
-                <button
-                  className="px-[23.5px] py-[10px] rounded-[4px] font-semibold text-[18px] text-white bg-secondary hover:opacity-95"
-                  type="button"
+                <Button
+                  isLoading={isSubmitting}
+                  height="53px"
+                  paddingX={"23.5px"}
+                  paddingY={"10px"}
+                  color="#ffffff"
+                  bgColor="#f9995d"
+                  borderRadius="4px"
+                  fontSize="18px"
+                  type="submit"
                 >
                   Subscribe
-                </button>
-              </div>
+                </Button>
+              </form>
             </div>
             <div>
               <p className="pb-[20px] font-medium text-[20px] uppercase text-primary">
