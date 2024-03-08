@@ -53,6 +53,7 @@ const AppHeader = () => {
             flexDir={["column", "column", "column", "row"]}
             spacing={["20px", "20px", "20px", "50px"]}
             width={["100vw", "100vw", "100vw", "unset"]}
+            py={["30px", "30px", "30px", "unset"]}
             transform={[
               "translateX(-50%)",
               "translateX(-50%)",
@@ -62,41 +63,21 @@ const AppHeader = () => {
             backgroundColor={["white", "white", "white", "unset"]}
             display={isMenuOpen ? "flex" : "none"}
           >
-            <a
-              onClick={toggleMenu}
-              className="hover:text-secondary"
-              href="#home"
-            >
+            <Link onClick={toggleMenu} className="hover:text-secondary" to="/">
               Home
-            </a>
-            <a
-              onClick={toggleMenu}
-              className="hover:text-secondary"
-              href="#about-us"
-            >
+            </Link>
+            <Link onClick={toggleMenu} className="hover:text-secondary" to="/">
               About Us
-            </a>
-            <a
-              onClick={toggleMenu}
-              className="hover:text-secondary"
-              href="#projects"
-            >
+            </Link>
+            <Link onClick={toggleMenu} className="hover:text-secondary" to="/">
               Projects
-            </a>
-            <a
-              onClick={toggleMenu}
-              className="hover:text-secondary"
-              href="#services"
-            >
+            </Link>
+            <Link onClick={toggleMenu} className="hover:text-secondary" to="/">
               Services
-            </a>
-            <a
-              onClick={toggleMenu}
-              className="hover:text-secondary"
-              href="#contact-us"
-            >
+            </Link>
+            <Link onClick={toggleMenu} className="hover:text-secondary" to="/">
               Contact Us
-            </a>
+            </Link>
           </HStack>
         </HStack>
       </Container>

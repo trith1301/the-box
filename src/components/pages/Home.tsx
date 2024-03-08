@@ -1,9 +1,11 @@
 import FeatureProjectsCarousel from "../shared/FeatureProjectsCarousel"
+import Reputation from "../shared/Reputation"
 
 const Home = () => {
   return (
     <main className="overflow-hidden h-[2000px]">
       <FeatureProjectsCarousel />
+      <Reputation />
     </main>
   )
 }
