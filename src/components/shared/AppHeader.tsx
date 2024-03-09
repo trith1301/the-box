@@ -33,9 +33,9 @@ const AppHeader = () => {
   return (
     <header className="z-50 sticky top-0 left-0 right-0 flex items-center bg-white">
       <Container maxW={["95%", "95%", "95%", "95%", "1200px"]}>
-        <HStack position="relative" justify="space-between" height="80px">
+          <HStack className="h-[56px] lg:h-[80px]" position="relative" justify="space-between">
           <Link to="/">
-            <Image src={logo} />
+            <Image className="w-[28px] lg:w-auto" src={logo} />
           </Link>
           <Box
             onClick={toggleMenu}

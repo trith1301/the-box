@@ -1,3 +1,6 @@
+/**
+ * ChakraUI BreakPoints (Unit: 'em')
+ **/
 export enum SCREENS {
   BASE = 0,
   SM = 30,
