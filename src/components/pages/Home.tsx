@@ -4,6 +4,7 @@ import AboutUs from "../shared/AboutUs"
 import Services from "../shared/Services"
 import Stats from "../shared/Stats"
 import Advertisement from "../shared/Advertisement"
+import ProjectsCarousel from "../shared/ProjectsCarousel"
 import ContactForm from "../shared/ContactForm"
 
 const Home = () => {
@@ -15,6 +16,7 @@ const Home = () => {
       <Services />
       <Stats />
       <Advertisement />
+      <ProjectsCarousel />
       <ContactForm />
     </main>
   )

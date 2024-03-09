@@ -1,23 +1,27 @@
 [
   {
+    "id": 1,
     "title": "Projects Completed",
     "slug": "projects-completed",
     "count": 123,
     "image": "/images/stats/projects-completed.svg"
   },
   {
+    "id": 2,
     "title": "Happy Clients",
     "slug": "happy-clients",
     "count": 84,
     "image": "/images/stats/happy-clients.svg"
   },
   {
+    "id": 3,
     "title": "Awards Win",
     "slug": "awards-win",
     "count": 37,
     "image": "/images/stats/awards-win.svg"
   },
   {
+    "id": 4,
     "title": "Years in Business",
     "slug": "years-in-business",
     "count": 30,
