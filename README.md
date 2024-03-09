@@ -18,7 +18,7 @@ This is an Assignment for the Frontend Intern Application at Tego Global Softwar
 
 ### Technologies
 
-This project build on **ReactJS** Library (**Vite Bundler**).
+This project build on **ReactJS** Library (**Vite** Bundler), **ChakraUI** and **TailwindCSS**.
 
 Environment requirements:
 
@@ -26,9 +26,6 @@ Environment requirements:
 |------------|-------------|
 | `Node` | 20.11.0 |
 | `NPM` | 10.2.4 |
-| `ReactJS` | 18.2.0 |
-| `ChakraUI` | 2.8.2 |
-| `TailwindCSS` | 3.4.1 |
 
 ### Installation
 
