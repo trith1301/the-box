@@ -1,5 +1,7 @@
 # TheBox Landing Page
 
+![TheBox Logo](https://thebox.trith13102.dev/assets/wide-logo-09sNy3wD.svg "TheBox Logo")
+
 ## Information
 
 ### Deployment
