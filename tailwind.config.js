@@ -17,5 +17,15 @@ export default {
       },
     },
   },
+  purge: {
+    options: {
+      safelist: [
+        "text-red-500",
+        "border-red-500",
+        "text-green-500",
+        "border-green-500",
+      ],
+    },
+  },
   plugins: [],
 }
