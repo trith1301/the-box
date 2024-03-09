@@ -1,11 +1,15 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import { useForm, SubmitHandler } from "react-hook-form"
-import { useToast, Container, Button } from "@chakra-ui/react"
+import { ErrorMessage } from "@hookform/error-message"
+import { Container, Button } from "@chakra-ui/react"
+import { useNotification } from "../../hooks/useNotification"
 
 import FacebookIcon from "./icons/FacebookIcon"
 import LinkedInIcon from "./icons/LinkedInIcon"
 import TwitterIcon from "./icons/TwitterIcon"
+
+import { EMAIL_PATTERN } from "../../core/constants"
 
 import theBoxLogo from "../../assets/images/logo/wide-logo.svg"
 
@@ -14,19 +18,17 @@ type Inputs = {
 }
 
 const AppFooter = () => {
-  const toast = useToast()
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false)
-  const { register, handleSubmit, reset } = useForm<Inputs>()
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<Inputs>()
+  const notification = useNotification({ type: "success" })
 
   const pushNotification = () => {
-    toast({
-      title: "Newsletter Subscribed 👋",
-      description: "You will receive the newsletter ASAP",
-      status: "success",
-      position: "top-right",
-      duration: 4000,
-      isClosable: true,
-    })
+    notification("Successfully subscribed!")
   }
 
   const onSubmit: SubmitHandler<Inputs> = () => {
@@ -77,16 +79,36 @@ const AppFooter = () => {
                 onSubmit={handleSubmit(onSubmit)}
                 className="flex flex-col lg:flex-row gap-[8px]"
               >
-                <input
-                  className="px-[8px] py-[10px] border-[1px] border-[#e0e3eb] rounded-[4px] focus:outline-secondary"
-                  placeholder="Your email here"
-                  type="text"
-                  {...register("email", {
-                    required: true,
-                    pattern:
-                      /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/,
-                  })}
-                />
+                <div className="relative">
+                  <input
+                    className={`w-full h-full lg:w-[unset] relative px-[8px] py-[10px] border-[1px] border-[#e0e3eb] rounded-[4px] focus:outline-secondary ${
+                      errors?.email
+                        ? "border-red-500 border-2"
+                        : "border-[#e0e3eb]"
+                    }`}
+                    placeholder="Your email here"
+                    type="text"
+                    {...register("email", {
+                      required: "This is required",
+                      pattern: {
+                        value: EMAIL_PATTERN,
+                        message: "Invalid email address",
+                      },
+                    })}
+                  />
+                  <div className="z-[1] lg:absolute top-full">
+                    <ErrorMessage
+                      errors={errors}
+                      name="email"
+                      render={({ message }) => (
+                        <p className="mt-[2px] text-sm text-red-500">
+                          {message}
+                        </p>
+                      )}
+                    />
+                  </div>
+                </div>
+
                 <Button
                   isLoading={isSubmitting}
                   height="53px"
