@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "The National University of Architecture",
+    "slogan": "Building things is our mission",
+    "image": "/images/feature-projects-carousel/project-image-0.png"
+  },
+  {
+    "id": 2,
+    "name": "Zentrum Paul Klee Multimedia Museum",
+    "slogan": "Architecture is our passion",
+    "image": "/images/feature-projects-carousel/project-image-1.png"
+  },
+  {
+    "id": 3,
+    "name": "Park Royal Hotel",
+    "slogan": "Building Dreams, Crafting Futures",
+    "image": "/images/feature-projects-carousel/project-image-2.png"
+  }
+]
