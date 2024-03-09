@@ -1,6 +1,10 @@
 import FeatureProjectsCarousel from "../shared/FeatureProjectsCarousel"
 import Reputation from "../shared/Reputation"
 import AboutUs from "../shared/AboutUs"
+import Services from "../shared/Services"
+import Stats from "../shared/Stats"
+import Advertisement from "../shared/Advertisement"
+import ContactForm from "../shared/ContactForm"
 
 const Home = () => {
   return (
@@ -8,10 +12,12 @@ const Home = () => {
       <FeatureProjectsCarousel />
       <Reputation />
       <AboutUs />
+      <Services />
+      <Stats />
+      <Advertisement />
+      <ContactForm />
     </main>
   )
 }
 
 export default Home
-
-// <Container maxW={["95%", "95%", "95%", "95%", "1200px"]} height="1200px"></Container>
