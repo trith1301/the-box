@@ -50,7 +50,7 @@ const ContactForm = () => {
           className="grid grid-cols-1 lg:grid-cols-2 gap-x-[32px] gap-y-[20px]"
         >
           <input
-            className="px-[8px] py-[10px] rounded-[4px] focus:outline-primary"
+            className="px-[8px] py-[10px] rounded-[4px] border-[1px] border-[#e0e3eb] focus:outline-primary"
             type="text"
             placeholder="Your name*"
             {...register("fullName", {
@@ -58,7 +58,7 @@ const ContactForm = () => {
             })}
           />
           <input
-            className="px-[8px] py-[10px] rounded-[4px] focus:outline-primary"
+            className="px-[8px] py-[10px] rounded-[4px] border-[1px] border-[#e0e3eb] focus:outline-primary"
             type="text"
             placeholder="Email*"
             {...register("email", {
@@ -67,7 +67,7 @@ const ContactForm = () => {
             })}
           />
           <input
-            className="px-[8px] py-[10px] rounded-[4px] focus:outline-primary"
+            className="px-[8px] py-[10px] rounded-[4px] border-[1px] border-[#e0e3eb] focus:outline-primary"
             type="text"
             placeholder="Reason for Contacting*"
             {...register("reason", {
@@ -75,7 +75,7 @@ const ContactForm = () => {
             })}
           />
           <input
-            className="px-[8px] py-[10px] rounded-[4px] focus:outline-primary"
+            className="px-[8px] py-[10px] rounded-[4px] border-[1px] border-[#e0e3eb] focus:outline-primary"
             type="text"
             placeholder="Phone"
             {...register("phone", {
@@ -83,13 +83,13 @@ const ContactForm = () => {
             })}
           />
           <textarea
-            className="lg:col-span-2 px-[8px] py-[10px] rounded-[4px] focus:outline-primary"
+            className="lg:col-span-2 px-[8px] py-[10px] resize-none rounded-[4px] border-[1px] border-[#e0e3eb] focus:outline-primary"
             rows={6}
             placeholder="Message"
             {...register("message")}
           ></textarea>
           <span className="lg:col-span-2 text-[16px] font-normal text-[#667299]">
-            * indicates a required field
+            <span className="text-[#c40303]">*</span> indicates a required field
           </span>
           <Button
             isLoading={isSubmitting}
@@ -100,6 +100,7 @@ const ContactForm = () => {
             bgColor="#2947a9"
             borderRadius="2px"
             type="submit"
+            _hover={{opacity: 0.95}}
           >
             Submit
           </Button>

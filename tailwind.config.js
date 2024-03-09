@@ -17,15 +17,16 @@ export default {
       },
     },
   },
-  purge: {
-    options: {
-      safelist: [
-        "text-red-500",
-        "border-red-500",
-        "text-green-500",
-        "border-green-500",
-      ],
-    },
-  },
+  safelist: [
+    "font-bold",
+    "text-primary",
+    "text-[#c2c7d6]",
+    "before:block",
+    "before:content-['']",
+    "before:mr-[18px]",
+    "before:w-[4px]",
+    "before:h-full",
+    "before:bg-primary",
+  ],
   plugins: [],
 }

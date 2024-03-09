@@ -97,6 +97,7 @@ const AppFooter = () => {
                   borderRadius="4px"
                   fontSize="18px"
                   type="submit"
+                  _hover={{ opacity: 0.95 }}
                 >
                   Subscribe
                 </Button>
