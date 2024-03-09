@@ -12,12 +12,9 @@
 | `Staging`         | [stg-thebox.trith13102.dev](https://stg-thebox.trith13102.dev)  |
 | `Development`     | [dev-thebox.trith13102.dev](https://dev-thebox.trith13102.dev)  |
 
-
-This is an assignment for the Frontend Intern Application at Tego Global Software Company.
-
 ### About
 
-This is an assignment for the Frontend Intern Application at Tego Global Software Company.
+This is an Assignment for the Frontend Intern Application at Tego Global Software Company.
 
 ### Technologies
 
@@ -29,6 +26,9 @@ Environment requirements:
 |------------|-------------|
 | `Node` | 20.11.0 |
 | `NPM` | 10.2.4 |
+| `ReactJS` | 18.2.0 |
+| `ChakraUI` | 2.8.2 |
+| `TailwindCSS` | 3.4.1 |
 
 ### Installation
 
