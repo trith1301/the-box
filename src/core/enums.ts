@@ -1,11 +1,12 @@
 /**
- * ChakraUI BreakPoints (Unit: 'em')
+ * TailwindCSS Screens (Unit: 'px')
+ * 
+ * Visit: https://tailwindcss.com/docs/responsive-design
  **/
 export enum SCREENS {
-  BASE = 0,
-  SM = 30,
-  MD = 48,
-  LG = 62,
-  XL = 80,
-  XXL = 96,
+  sm = 640,
+  md = 768,
+  lg = 1024,
+  xl = 1280,
+  "2xl" = 1536,
 }

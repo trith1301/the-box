@@ -2,7 +2,8 @@ import { useState } from "react"
 import { Link } from "react-router-dom"
 import { useForm, SubmitHandler } from "react-hook-form"
 import { ErrorMessage } from "@hookform/error-message"
-import { useNotification } from "../../hooks/useNotification"
+import useDevLogger from "../../hooks/useDevLogger"
+import useNotification from "../../hooks/useNotification"
 
 import FacebookIcon from "./icons/FacebookIcon"
 import LinkedInIcon from "./icons/LinkedInIcon"
@@ -25,17 +26,19 @@ const AppFooter = () => {
     reset,
     formState: { errors },
   } = useForm<Inputs>()
+  const devLogger = useDevLogger()
   const notification = useNotification({ type: "success" })
 
   const pushNotification = () => {
     notification("Successfully subscribed!")
   }
 
-  const onSubmit: SubmitHandler<Inputs> = () => {
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
     setIsSubmitting((current) => !current)
     setTimeout(() => {
-      reset()
+      devLogger("Subscribed Email", data)
       pushNotification()
+      reset()
       setIsSubmitting((current) => !current)
     }, 1000)
   }
