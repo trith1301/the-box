@@ -59,11 +59,7 @@ const DesktopProjectCarousel = () => {
       )
     }
 
-    return (
-      <div className="flex gap-x-[16px]">
-        <>{dots}</>
-      </div>
-    )
+    return <div className="flex gap-x-[16px]">{dots}</div>
   }
 
   useEffect(() => {
@@ -85,16 +81,16 @@ const DesktopProjectCarousel = () => {
         ref={carouselRef}
       >
         <div>
-          <div className="grid grid-cols-2 gap-x-8 gap-y-8">
-            <div>
+          <div className="grid grid-cols-2 gap-x-1 xl:gap-x-8 gap-y-8">
+            <div className="w-[300px] xl:w-[384px]">
               <div
-                className="w-[384px] h-[247px] bg-no-repeat"
+                className="h-[247px] bg-no-repeat"
                 style={{
                   backgroundImage:
                     "url(/images/projects/wildstone-infra-hotel.png)",
                 }}
               ></div>
-              <div className="min-h-[84px] pt-[12px] pb-[16px] px-[12px] bg-primary">
+              <div className="w-full min-h-[84px] pt-[12px] pb-[16px] px-[12px] bg-primary">
                 <p className="pb-[12px] text-[20px] font-bold text-white">
                   Wildstone Infra Hotel
                 </p>
@@ -103,15 +99,15 @@ const DesktopProjectCarousel = () => {
                 </p>
               </div>
             </div>
-            <div>
+            <div className="w-[300px] xl:w-[384px]">
               <div
-                className="w-[384px] h-[247px] bg-no-repeat"
+                className="h-[247px] bg-no-repeat"
                 style={{
                   backgroundImage:
                     "url(/images/projects/wish-stone-building.png)",
                 }}
               ></div>
-              <div className="min-h-[84px] pt-[12px] pb-[16px] px-[12px] bg-primary">
+              <div className="w-full min-h-[84px] pt-[12px] pb-[16px] px-[12px] bg-primary">
                 <p className="pb-[12px] text-[20px] font-bold text-white">
                   Wish Stone Building
                 </p>
@@ -120,15 +116,15 @@ const DesktopProjectCarousel = () => {
                 </p>
               </div>
             </div>
-            <div>
+            <div className="w-[300px] xl:w-[384px]">
               <div
-                className="w-[384px] h-[247px] bg-no-repeat"
+                className="h-[247px] bg-no-repeat"
                 style={{
                   backgroundImage:
                     "url(/images/projects/mr-parkinston-house.png)",
                 }}
               ></div>
-              <div className="min-h-[84px] pt-[12px] pb-[16px] px-[12px] bg-primary">
+              <div className="w-full min-h-[84px] pt-[12px] pb-[16px] px-[12px] bg-primary">
                 <p className="pb-[12px] text-[20px] font-bold text-white">
                   Mr. Parkinston`s House
                 </p>
@@ -137,15 +133,15 @@ const DesktopProjectCarousel = () => {
                 </p>
               </div>
             </div>
-            <div>
+            <div className="w-[300px] xl:w-[384px]">
               <div
-                className="w-[384px] h-[247px] bg-no-repeat"
+                className="h-[247px] bg-no-repeat"
                 style={{
                   backgroundImage: "url(/images/projects/oregano-height.png)",
                 }}
               ></div>
               <div className="min-h-[84px] pt-[12px] pb-[16px] px-[12px] bg-primary">
-                <p className="pb-[12px] text-[20px] font-bold text-white">
+                <p className="w-full pb-[12px] text-[20px] font-bold text-white">
                   Oregano Height
                 </p>
                 <p className="text-[18px] font-normal text-white">
@@ -157,15 +153,15 @@ const DesktopProjectCarousel = () => {
         </div>
         <div>
           <div className="grid grid-cols-2 gap-x-8 gap-y-8">
-            <div>
+            <div className="w-[300px] xl:w-[384px]">
               <div
-                className="w-[384px] h-[247px] bg-no-repeat"
+                className="h-[247px] bg-no-repeat"
                 style={{
                   backgroundImage:
                     "url(/images/projects/wildstone-infra-hotel.png)",
                 }}
               ></div>
-              <div className="min-h-[84px] pt-[12px] pb-[16px] px-[12px] bg-primary">
+              <div className="w-full min-h-[84px] pt-[12px] pb-[16px] px-[12px] bg-primary">
                 <p className="pb-[12px] text-[20px] font-bold text-white">
                   Wildstone Infra Hotel
                 </p>
@@ -174,15 +170,15 @@ const DesktopProjectCarousel = () => {
                 </p>
               </div>
             </div>
-            <div>
+            <div className="w-[300px] xl:w-[384px]">
               <div
-                className="w-[384px] h-[247px] bg-no-repeat"
+                className="h-[247px] bg-no-repeat"
                 style={{
                   backgroundImage:
                     "url(/images/projects/wish-stone-building.png)",
                 }}
               ></div>
-              <div className="min-h-[84px] pt-[12px] pb-[16px] px-[12px] bg-primary">
+              <div className="w-full min-h-[84px] pt-[12px] pb-[16px] px-[12px] bg-primary">
                 <p className="pb-[12px] text-[20px] font-bold text-white">
                   Wish Stone Building
                 </p>
@@ -191,15 +187,15 @@ const DesktopProjectCarousel = () => {
                 </p>
               </div>
             </div>
-            <div>
+            <div className="w-[300px] xl:w-[384px]">
               <div
-                className="w-[384px] h-[247px] bg-no-repeat"
+                className="h-[247px] bg-no-repeat"
                 style={{
                   backgroundImage:
                     "url(/images/projects/mr-parkinston-house.png)",
                 }}
               ></div>
-              <div className="min-h-[84px] pt-[12px] pb-[16px] px-[12px] bg-primary">
+              <div className="w-full min-h-[84px] pt-[12px] pb-[16px] px-[12px] bg-primary">
                 <p className="pb-[12px] text-[20px] font-bold text-white">
                   Mr. Parkinston`s House
                 </p>
@@ -208,15 +204,15 @@ const DesktopProjectCarousel = () => {
                 </p>
               </div>
             </div>
-            <div>
+            <div className="w-[300px] xl:w-[384px]">
               <div
-                className="w-[384px] h-[247px] bg-no-repeat"
+                className="h-[247px] bg-no-repeat"
                 style={{
                   backgroundImage: "url(/images/projects/oregano-height.png)",
                 }}
               ></div>
               <div className="min-h-[84px] pt-[12px] pb-[16px] px-[12px] bg-primary">
-                <p className="pb-[12px] text-[20px] font-bold text-white">
+                <p className="w-full pb-[12px] text-[20px] font-bold text-white">
                   Oregano Height
                 </p>
                 <p className="text-[18px] font-normal text-white">
@@ -228,15 +224,15 @@ const DesktopProjectCarousel = () => {
         </div>
         <div>
           <div className="grid grid-cols-2 gap-x-8 gap-y-8">
-            <div>
+            <div className="w-[300px] xl:w-[384px]">
               <div
-                className="w-[384px] h-[247px] bg-no-repeat"
+                className="h-[247px] bg-no-repeat"
                 style={{
                   backgroundImage:
                     "url(/images/projects/wildstone-infra-hotel.png)",
                 }}
               ></div>
-              <div className="min-h-[84px] pt-[12px] pb-[16px] px-[12px] bg-primary">
+              <div className="w-full min-h-[84px] pt-[12px] pb-[16px] px-[12px] bg-primary">
                 <p className="pb-[12px] text-[20px] font-bold text-white">
                   Wildstone Infra Hotel
                 </p>
@@ -245,15 +241,15 @@ const DesktopProjectCarousel = () => {
                 </p>
               </div>
             </div>
-            <div>
+            <div className="w-[300px] xl:w-[384px]">
               <div
-                className="w-[384px] h-[247px] bg-no-repeat"
+                className="h-[247px] bg-no-repeat"
                 style={{
                   backgroundImage:
                     "url(/images/projects/wish-stone-building.png)",
                 }}
               ></div>
-              <div className="min-h-[84px] pt-[12px] pb-[16px] px-[12px] bg-primary">
+              <div className="w-full min-h-[84px] pt-[12px] pb-[16px] px-[12px] bg-primary">
                 <p className="pb-[12px] text-[20px] font-bold text-white">
                   Wish Stone Building
                 </p>
@@ -262,15 +258,15 @@ const DesktopProjectCarousel = () => {
                 </p>
               </div>
             </div>
-            <div>
+            <div className="w-[300px] xl:w-[384px]">
               <div
-                className="w-[384px] h-[247px] bg-no-repeat"
+                className="h-[247px] bg-no-repeat"
                 style={{
                   backgroundImage:
                     "url(/images/projects/mr-parkinston-house.png)",
                 }}
               ></div>
-              <div className="min-h-[84px] pt-[12px] pb-[16px] px-[12px] bg-primary">
+              <div className="w-full min-h-[84px] pt-[12px] pb-[16px] px-[12px] bg-primary">
                 <p className="pb-[12px] text-[20px] font-bold text-white">
                   Mr. Parkinston`s House
                 </p>
@@ -279,15 +275,15 @@ const DesktopProjectCarousel = () => {
                 </p>
               </div>
             </div>
-            <div>
+            <div className="w-[300px] xl:w-[384px]">
               <div
-                className="w-[384px] h-[247px] bg-no-repeat"
+                className="h-[247px] bg-no-repeat"
                 style={{
                   backgroundImage: "url(/images/projects/oregano-height.png)",
                 }}
               ></div>
               <div className="min-h-[84px] pt-[12px] pb-[16px] px-[12px] bg-primary">
-                <p className="pb-[12px] text-[20px] font-bold text-white">
+                <p className="w-full pb-[12px] text-[20px] font-bold text-white">
                   Oregano Height
                 </p>
                 <p className="text-[18px] font-normal text-white">
@@ -299,15 +295,15 @@ const DesktopProjectCarousel = () => {
         </div>
         <div>
           <div className="grid grid-cols-2 gap-x-8 gap-y-8">
-            <div>
+            <div className="w-[300px] xl:w-[384px]">
               <div
-                className="w-[384px] h-[247px] bg-no-repeat"
+                className="h-[247px] bg-no-repeat"
                 style={{
                   backgroundImage:
                     "url(/images/projects/wildstone-infra-hotel.png)",
                 }}
               ></div>
-              <div className="min-h-[84px] pt-[12px] pb-[16px] px-[12px] bg-primary">
+              <div className="w-full min-h-[84px] pt-[12px] pb-[16px] px-[12px] bg-primary">
                 <p className="pb-[12px] text-[20px] font-bold text-white">
                   Wildstone Infra Hotel
                 </p>
@@ -316,15 +312,15 @@ const DesktopProjectCarousel = () => {
                 </p>
               </div>
             </div>
-            <div>
+            <div className="w-[300px] xl:w-[384px]">
               <div
-                className="w-[384px] h-[247px] bg-no-repeat"
+                className="h-[247px] bg-no-repeat"
                 style={{
                   backgroundImage:
                     "url(/images/projects/wish-stone-building.png)",
                 }}
               ></div>
-              <div className="min-h-[84px] pt-[12px] pb-[16px] px-[12px] bg-primary">
+              <div className="w-full min-h-[84px] pt-[12px] pb-[16px] px-[12px] bg-primary">
                 <p className="pb-[12px] text-[20px] font-bold text-white">
                   Wish Stone Building
                 </p>
@@ -333,15 +329,15 @@ const DesktopProjectCarousel = () => {
                 </p>
               </div>
             </div>
-            <div>
+            <div className="w-[300px] xl:w-[384px]">
               <div
-                className="w-[384px] h-[247px] bg-no-repeat"
+                className="h-[247px] bg-no-repeat"
                 style={{
                   backgroundImage:
                     "url(/images/projects/mr-parkinston-house.png)",
                 }}
               ></div>
-              <div className="min-h-[84px] pt-[12px] pb-[16px] px-[12px] bg-primary">
+              <div className="w-full min-h-[84px] pt-[12px] pb-[16px] px-[12px] bg-primary">
                 <p className="pb-[12px] text-[20px] font-bold text-white">
                   Mr. Parkinston`s House
                 </p>
@@ -350,15 +346,15 @@ const DesktopProjectCarousel = () => {
                 </p>
               </div>
             </div>
-            <div>
+            <div className="w-[300px] xl:w-[384px]">
               <div
-                className="w-[384px] h-[247px] bg-no-repeat"
+                className="h-[247px] bg-no-repeat"
                 style={{
                   backgroundImage: "url(/images/projects/oregano-height.png)",
                 }}
               ></div>
               <div className="min-h-[84px] pt-[12px] pb-[16px] px-[12px] bg-primary">
-                <p className="pb-[12px] text-[20px] font-bold text-white">
+                <p className="w-full pb-[12px] text-[20px] font-bold text-white">
                   Oregano Height
                 </p>
                 <p className="text-[18px] font-normal text-white">
@@ -370,15 +366,15 @@ const DesktopProjectCarousel = () => {
         </div>
         <div>
           <div className="grid grid-cols-2 gap-x-8 gap-y-8">
-            <div>
+            <div className="w-[300px] xl:w-[384px]">
               <div
-                className="w-[384px] h-[247px] bg-no-repeat"
+                className="h-[247px] bg-no-repeat"
                 style={{
                   backgroundImage:
                     "url(/images/projects/wildstone-infra-hotel.png)",
                 }}
               ></div>
-              <div className="min-h-[84px] pt-[12px] pb-[16px] px-[12px] bg-primary">
+              <div className="w-full min-h-[84px] pt-[12px] pb-[16px] px-[12px] bg-primary">
                 <p className="pb-[12px] text-[20px] font-bold text-white">
                   Wildstone Infra Hotel
                 </p>
@@ -387,15 +383,15 @@ const DesktopProjectCarousel = () => {
                 </p>
               </div>
             </div>
-            <div>
+            <div className="w-[300px] xl:w-[384px]">
               <div
-                className="w-[384px] h-[247px] bg-no-repeat"
+                className="h-[247px] bg-no-repeat"
                 style={{
                   backgroundImage:
                     "url(/images/projects/wish-stone-building.png)",
                 }}
               ></div>
-              <div className="min-h-[84px] pt-[12px] pb-[16px] px-[12px] bg-primary">
+              <div className="w-full min-h-[84px] pt-[12px] pb-[16px] px-[12px] bg-primary">
                 <p className="pb-[12px] text-[20px] font-bold text-white">
                   Wish Stone Building
                 </p>
@@ -404,15 +400,15 @@ const DesktopProjectCarousel = () => {
                 </p>
               </div>
             </div>
-            <div>
+            <div className="w-[300px] xl:w-[384px]">
               <div
-                className="w-[384px] h-[247px] bg-no-repeat"
+                className="h-[247px] bg-no-repeat"
                 style={{
                   backgroundImage:
                     "url(/images/projects/mr-parkinston-house.png)",
                 }}
               ></div>
-              <div className="min-h-[84px] pt-[12px] pb-[16px] px-[12px] bg-primary">
+              <div className="w-full min-h-[84px] pt-[12px] pb-[16px] px-[12px] bg-primary">
                 <p className="pb-[12px] text-[20px] font-bold text-white">
                   Mr. Parkinston`s House
                 </p>
@@ -421,15 +417,15 @@ const DesktopProjectCarousel = () => {
                 </p>
               </div>
             </div>
-            <div>
+            <div className="w-[300px] xl:w-[384px]">
               <div
-                className="w-[384px] h-[247px] bg-no-repeat"
+                className="h-[247px] bg-no-repeat"
                 style={{
                   backgroundImage: "url(/images/projects/oregano-height.png)",
                 }}
               ></div>
               <div className="min-h-[84px] pt-[12px] pb-[16px] px-[12px] bg-primary">
-                <p className="pb-[12px] text-[20px] font-bold text-white">
+                <p className="w-full pb-[12px] text-[20px] font-bold text-white">
                   Oregano Height
                 </p>
                 <p className="text-[18px] font-normal text-white">
@@ -444,7 +440,7 @@ const DesktopProjectCarousel = () => {
         <div className="flex items-center justify-between">
           <button
             onClick={prevSlide}
-            className="flex items-center justify-center gap-[10px] w-[295px] h-[64px] bg-[#292e3d] hover:bg-secondary"
+            className="flex items-center justify-center gap-[10px] w-[220px] xl:w-[295px] h-[64px] bg-[#292e3d] hover:bg-secondary"
             type="button"
           >
             <LeftArrow />
@@ -453,7 +449,7 @@ const DesktopProjectCarousel = () => {
           {renderDots(PAGES)}
           <button
             onClick={nextSlide}
-            className="flex flex-row-reverse items-center justify-center gap-[10px] w-[295px] h-[64px] bg-[#292e3d] hover:bg-secondary"
+            className="flex flex-row-reverse items-center justify-center gap-[10px] w-[220px] xl:w-[295px] h-[64px] bg-[#292e3d] hover:bg-secondary"
             type="button"
           >
             <RightArrow />

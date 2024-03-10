@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react"
-import { Container } from "@chakra-ui/react"
 
 import { Stat } from "../../core/types"
 
@@ -14,10 +13,7 @@ const Stats = () => {
 
   return (
     <section className="pt-[112px] pb-[99px]">
-      <Container
-        className="flex flex-col items-center"
-        maxW={["95%", "95%", "95%", "95%", "1200px"]}
-      >
+      <div className="flex flex-col items-center w-full px-6 lg:w-[80%] lg:max-w-[1216px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[271px_271px_271px] gap-x-[98px]">
           <div className="col-span-2 relative grid md:grid-cols-2 gap-x-[30px] gap-y-[40px] lg:block lg:h-[500px]">
             <div className="z-[1] lg:absolute top-0 right-[64px] lg:w-[280px] h-[155px] rounded-[4px] bg-white shadow-lg">
@@ -101,7 +97,7 @@ const Stats = () => {
             </button>
           </div>
         </div>
-      </Container>
+      </div>
     </section>
   )
 }
