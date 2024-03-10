@@ -2,7 +2,8 @@ import { useState } from "react"
 import { useForm, SubmitHandler } from "react-hook-form"
 import { ErrorMessage } from "@hookform/error-message"
 
-import { useNotification } from "../../hooks/useNotification"
+import useDevLogger from "../../hooks/useDevLogger"
+import useNotification from "../../hooks/useNotification"
 
 import Spinner from "./icons/Spinner"
 
@@ -24,18 +25,20 @@ const ContactForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<Inputs>()
+  const devLogger = useDevLogger()
   const notification = useNotification({ type: "success" })
 
   const pushNotification = (message: string) => {
     notification(message)
   }
 
-  const onSubmit: SubmitHandler<Inputs> = () => {
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
     setIsSubmitting((current) => !current)
     setTimeout(() => {
-      reset()
+      devLogger("ContactForm Data", data)
       pushNotification("Successfully done! We'll contact you soon.")
       setIsSubmitting((current) => !current)
+      reset()
     }, 1000)
   }
 
