@@ -15,9 +15,21 @@ export default {
         primary: "#2947a9",
         secondary: "#f9995d",
       },
+      animation: {
+        "fade-in": "fade-in .4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both",
+      },
+      keyframes: {
+        "fade-in": {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 },
+        },
+      },
     },
   },
   safelist: [
+    "block",
+    "hidden",
+    "flex",
     "font-bold",
     "text-primary",
     "text-[#c2c7d6]",
