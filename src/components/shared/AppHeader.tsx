@@ -1,11 +1,11 @@
 import { useState, useRef } from "react"
 import { Link } from "react-router-dom"
 
-import BurgerIcon from "./icons/BurgerIcon"
 import XIcon from "./icons/XIcon"
+import BurgerIcon from "./icons/BurgerIcon"
 
-import squareLogo from "../../assets/images/logo/square-logo.svg"
-import wideLogo from "../../assets/images/logo/wide-logo.svg"
+import SQUARE_LOGO from "../../assets/images/logo/square-logo.svg"
+import WIDE_LOGO from "../../assets/images/logo/wide-logo.svg"
 
 const AppHeader = () => {
   const menuRef = useRef<HTMLElement>(null)
@@ -24,14 +24,14 @@ const AppHeader = () => {
 
   return (
     <header className="z-50 sticky top-0 left-0 right-0 flex items-center bg-white">
-      <section className="relative flex items-center justify-between w-full px-6 lg:w-[80%] lg:max-w-[1440px] h-[56px] lg:h-[80px] mx-auto">
+      <section className="relative flex items-center justify-between w-full px-6 lg:w-[80%] lg:max-w-[1216px] h-[56px] lg:h-[80px] mx-auto">
         <Link to="/">
           <img
             className="block w-[28px] lg:hidden"
-            src={squareLogo}
+            src={SQUARE_LOGO}
             alt="Square Logo"
           />
-          <img className="hidden lg:block" src={wideLogo} alt="Wide" />
+          <img className="hidden lg:block" src={WIDE_LOGO} alt="Wide" />
         </Link>
         <button onClick={toggleMenu} className="block lg:hidden" type="button">
           {isMenuOpen ? <XIcon /> : <BurgerIcon />}
