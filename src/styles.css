@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary-color: #2947a9;
+  --secondary-color: #f9995d;
+}
+
 * {
   scroll-behavior: smooth;
+}
+
+.header-nav-link {
+  @apply lg:mx-[unset] px-6 py-4 lg:px-[unset] text-center lg:text-left hover:text-secondary transition-[color_text-shadow] ease-in-out duration-500;
+}
+
+.header-nav-link:hover {
+  @apply bg-slate-50 lg:bg-[unset];
+  text-shadow: 1px 0 0 var(--secondary-color);
 }

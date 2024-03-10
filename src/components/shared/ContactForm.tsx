@@ -1,6 +1,13 @@
 import { useState } from "react"
 import { useForm, SubmitHandler } from "react-hook-form"
-import { useToast, Container, Button } from "@chakra-ui/react"
+import { ErrorMessage } from "@hookform/error-message"
+
+import useDevLogger from "../../hooks/useDevLogger"
+import useNotification from "../../hooks/useNotification"
+
+import Spinner from "./icons/Spinner"
+
+import { EMAIL_PATTERN, VN_PHONE_PATTERN } from "../../core/constants"
 
 type Inputs = {
   fullName: string
@@ -11,33 +18,33 @@ type Inputs = {
 }
 
 const ContactForm = () => {
-  const toast = useToast()
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false)
-  const { register, handleSubmit, reset } = useForm<Inputs>()
+  const {
+    reset,
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<Inputs>()
+  const devLogger = useDevLogger()
+  const notification = useNotification({ type: "success" })
 
-  const pushNotification = () => {
-    toast({
-      title: "Message Delivered 🚀",
-      description: "We will contact you soon.",
-      status: "success",
-      position: "top-right",
-      duration: 4000,
-      isClosable: true,
-    })
+  const pushNotification = (message: string) => {
+    notification(message)
   }
 
-  const onSubmit: SubmitHandler<Inputs> = () => {
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
     setIsSubmitting((current) => !current)
     setTimeout(() => {
-      reset()
-      pushNotification()
+      devLogger("ContactForm Data", data)
+      pushNotification("Successfully done! We'll contact you soon.")
       setIsSubmitting((current) => !current)
+      reset()
     }, 1000)
   }
 
   return (
     <section className="py-[60px] bg-[#f6f8f7]">
-      <Container maxW={["100%", "100%", "100%", "592px"]}>
+      <div className="lg:w-[592px] px-6 mx-auto">
         <h3 className="pb-[20px] text-[20px] sm:text-[25px] md:text-[28px] lg:text-[36px] text-center font-bold">
           What can us do for you?
         </h3>
@@ -49,39 +56,91 @@ const ContactForm = () => {
           onSubmit={handleSubmit(onSubmit)}
           className="grid grid-cols-1 lg:grid-cols-2 gap-x-[32px] gap-y-[20px]"
         >
-          <input
-            className="px-[8px] py-[10px] rounded-[4px] border-[1px] border-[#e0e3eb] focus:outline-primary"
-            type="text"
-            placeholder="Your name*"
-            {...register("fullName", {
-              required: true,
-            })}
-          />
-          <input
-            className="px-[8px] py-[10px] rounded-[4px] border-[1px] border-[#e0e3eb] focus:outline-primary"
-            type="text"
-            placeholder="Email*"
-            {...register("email", {
-              required: true,
-              pattern: /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/,
-            })}
-          />
-          <input
-            className="px-[8px] py-[10px] rounded-[4px] border-[1px] border-[#e0e3eb] focus:outline-primary"
-            type="text"
-            placeholder="Reason for Contacting*"
-            {...register("reason", {
-              required: true,
-            })}
-          />
-          <input
-            className="px-[8px] py-[10px] rounded-[4px] border-[1px] border-[#e0e3eb] focus:outline-primary"
-            type="text"
-            placeholder="Phone"
-            {...register("phone", {
-              pattern: /(84|0[3|5|7|8|9])+([0-9]{8})\b/g,
-            })}
-          />
+          <div className="full-name-input">
+            <input
+              className={`w-full px-[8px] py-[10px] rounded-[4px] border-[1px]  focus:outline-primary ${
+                errors?.fullName
+                  ? "border-red-500 border-2"
+                  : "border-[#e0e3eb]"
+              }`}
+              type="text"
+              placeholder="Your name*"
+              {...register("fullName", {
+                required: "This is required",
+              })}
+            />
+            <ErrorMessage
+              errors={errors}
+              name="fullName"
+              render={({ message }) => (
+                <p className="mt-[2px] text-sm text-red-500">{message}</p>
+              )}
+            />
+          </div>
+          <div className="email-input">
+            <input
+              className={`w-full px-[8px] py-[10px] rounded-[4px] border-[1px]  focus:outline-primary ${
+                errors?.email ? "border-red-500 border-2" : "border-[#e0e3eb]"
+              }`}
+              type="text"
+              placeholder="Email*"
+              {...register("email", {
+                required: "This is required",
+                pattern: {
+                  value: EMAIL_PATTERN,
+                  message: "Invalid email address",
+                },
+              })}
+            />
+            <ErrorMessage
+              errors={errors}
+              name="email"
+              render={({ message }) => (
+                <p className="mt-[2px] text-sm text-red-500">{message}</p>
+              )}
+            />
+          </div>
+          <div className="reason">
+            <input
+              className={`w-full px-[8px] py-[10px] rounded-[4px] border-[1px]  focus:outline-primary ${
+                errors?.reason ? "border-red-500 border-2" : "border-[#e0e3eb]"
+              }`}
+              type="text"
+              placeholder="Reason for Contacting*"
+              {...register("reason", {
+                required: "This is required",
+              })}
+            />
+            <ErrorMessage
+              errors={errors}
+              name="reason"
+              render={({ message }) => (
+                <p className="mt-[2px] text-sm text-red-500">{message}</p>
+              )}
+            />
+          </div>
+          <div className="phone">
+            <input
+              className={`w-full px-[8px] py-[10px] rounded-[4px] border-[1px]  focus:outline-primary ${
+                errors?.phone ? "border-red-500 border-2" : "border-[#e0e3eb]"
+              }`}
+              type="text"
+              placeholder="Phone"
+              {...register("phone", {
+                pattern: {
+                  value: VN_PHONE_PATTERN,
+                  message: "Invalid phone number (+84 only)",
+                },
+              })}
+            />
+            <ErrorMessage
+              errors={errors}
+              name="phone"
+              render={({ message }) => (
+                <p className="mt-[2px] text-sm text-red-500">{message}</p>
+              )}
+            />
+          </div>
           <textarea
             className="lg:col-span-2 px-[8px] py-[10px] resize-none rounded-[4px] border-[1px] border-[#e0e3eb] focus:outline-primary"
             rows={6}
@@ -91,21 +150,17 @@ const ContactForm = () => {
           <span className="lg:col-span-2 text-[16px] font-normal text-[#667299]">
             <span className="text-[#c40303]">*</span> indicates a required field
           </span>
-          <Button
-            isLoading={isSubmitting}
-            className="lg:col-span-2 mx-auto"
-            width="271px"
-            height="53px"
-            color="#ffffff"
-            bgColor="#2947a9"
-            borderRadius="2px"
+          <button
+            className={`flex items-center justify-center lg:col-span-2 w-full md:w-[271px] h-[53px] mx-auto rounded-[2px] font-semibold text-white bg-primary hover:bg-opacity-95 ${
+              isSubmitting ? "cursor-not-allowed" : ""
+            }`}
+            disabled={isSubmitting}
             type="submit"
-            _hover={{opacity: 0.95}}
           >
-            Submit
-          </Button>
+            {isSubmitting ? <Spinner /> : "Submit"}
+          </button>
         </form>
-      </Container>
+      </div>
     </section>
   )
 }

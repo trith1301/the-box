@@ -1,8 +1,6 @@
-import { Container } from "@chakra-ui/layout"
-
 const AboutUs = () => {
   return (
-    <Container maxW={["95%", "95%", "95%", "95%", "1200px"]}>
+    <section className="w-full px-6 lg:w-[80%] lg:max-w-[1216px] mx-auto">
       <section className="relative flex items-center pt-[74px] pb-[200px]">
         <img
           className="hidden lg:block w-[902px] object-cover shadow-lg"
@@ -31,7 +29,7 @@ const AboutUs = () => {
           </button>
         </div>
       </section>
-    </Container>
+    </section>
   )
 }
 
