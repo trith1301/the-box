@@ -1,9 +1,11 @@
 import { useState } from "react"
 import { useForm, SubmitHandler } from "react-hook-form"
 import { ErrorMessage } from "@hookform/error-message"
-import { Container, Button } from "@chakra-ui/react"
 
 import { useNotification } from "../../hooks/useNotification"
+
+import Spinner from "./icons/Spinner"
+
 import { EMAIL_PATTERN, VN_PHONE_PATTERN } from "../../core/constants"
 
 type Inputs = {
@@ -39,7 +41,7 @@ const ContactForm = () => {
 
   return (
     <section className="py-[60px] bg-[#f6f8f7]">
-      <Container maxW={["100%", "100%", "100%", "592px"]}>
+      <div className="lg:w-[592px] px-6 mx-auto">
         <h3 className="pb-[20px] text-[20px] sm:text-[25px] md:text-[28px] lg:text-[36px] text-center font-bold">
           What can us do for you?
         </h3>
@@ -54,7 +56,9 @@ const ContactForm = () => {
           <div className="full-name-input">
             <input
               className={`w-full px-[8px] py-[10px] rounded-[4px] border-[1px]  focus:outline-primary ${
-                errors?.fullName ? "border-red-500 border-2" : "border-[#e0e3eb]"
+                errors?.fullName
+                  ? "border-red-500 border-2"
+                  : "border-[#e0e3eb]"
               }`}
               type="text"
               placeholder="Your name*"
@@ -143,21 +147,17 @@ const ContactForm = () => {
           <span className="lg:col-span-2 text-[16px] font-normal text-[#667299]">
             <span className="text-[#c40303]">*</span> indicates a required field
           </span>
-          <Button
-            isLoading={isSubmitting}
-            className="lg:col-span-2 mx-auto"
-            width="271px"
-            height="53px"
-            color="#ffffff"
-            bgColor="#2947a9"
-            borderRadius="2px"
+          <button
+            className={`flex items-center justify-center lg:col-span-2 w-full md:w-[271px] h-[53px] mx-auto rounded-[2px] font-semibold text-white bg-primary hover:bg-opacity-95 ${
+              isSubmitting ? "cursor-not-allowed" : ""
+            }`}
+            disabled={isSubmitting}
             type="submit"
-            _hover={{ opacity: 0.95 }}
           >
-            Submit
-          </Button>
+            {isSubmitting ? <Spinner /> : "Submit"}
+          </button>
         </form>
-      </Container>
+      </div>
     </section>
   )
 }
