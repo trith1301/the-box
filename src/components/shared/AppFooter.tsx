@@ -2,12 +2,13 @@ import { useState } from "react"
 import { Link } from "react-router-dom"
 import { useForm, SubmitHandler } from "react-hook-form"
 import { ErrorMessage } from "@hookform/error-message"
-import { Container, Button } from "@chakra-ui/react"
-import { useNotification } from "../../hooks/useNotification"
+import useDevLogger from "../../hooks/useDevLogger"
+import useNotification from "../../hooks/useNotification"
 
 import FacebookIcon from "./icons/FacebookIcon"
 import LinkedInIcon from "./icons/LinkedInIcon"
 import TwitterIcon from "./icons/TwitterIcon"
+import Spinner from "./icons/Spinner"
 
 import { EMAIL_PATTERN } from "../../core/constants"
 
@@ -25,17 +26,19 @@ const AppFooter = () => {
     reset,
     formState: { errors },
   } = useForm<Inputs>()
+  const devLogger = useDevLogger()
   const notification = useNotification({ type: "success" })
 
   const pushNotification = () => {
     notification("Successfully subscribed!")
   }
 
-  const onSubmit: SubmitHandler<Inputs> = () => {
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
     setIsSubmitting((current) => !current)
     setTimeout(() => {
-      reset()
+      devLogger("Subscribed Email", data)
       pushNotification()
+      reset()
       setIsSubmitting((current) => !current)
     }, 1000)
   }
@@ -43,10 +46,7 @@ const AppFooter = () => {
   return (
     <footer>
       <div className="flex items-center  bg-white">
-        <Container
-          className="flex flex-col lg:flex-row justify-between gap-y-[45px] pt-[85px] pb-[80px]"
-          maxW={["95%", "95%", "95%", "95%", "1200px"]}
-        >
+        <div className="flex flex-col lg:flex-row justify-between gap-y-[45px] pt-[85px] pb-[80px] w-full px-6 lg:w-[80%] lg:max-w-[1216px] mx-auto">
           <div className="grid grid-cols-[25%_75%] gap-x-[13px] gap-y-[16px] md:gap-y-[18px] lg:gap-y-[32px]">
             <p className="font-medium  text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] uppercase text-primary">
               Address:
@@ -108,21 +108,14 @@ const AppFooter = () => {
                     />
                   </div>
                 </div>
-
-                <Button
-                  isLoading={isSubmitting}
-                  height="53px"
-                  paddingX={"23.5px"}
-                  paddingY={"10px"}
-                  color="#ffffff"
-                  bgColor="#f9995d"
-                  borderRadius="4px"
-                  fontSize="18px"
+                <button
+                  className={`flex items-center justify-center w-full lg:w-[136px] h-[53px] px-[23.5px] py-[10px] rounded-[4px] font-semibold bg-secondary text-white ${
+                    isSubmitting ? "cursor-not-allowed" : ""
+                  }`}
                   type="submit"
-                  _hover={{ opacity: 0.95 }}
                 >
-                  Subscribe
-                </Button>
+                  {isSubmitting ? <Spinner /> : "Subscribe"}
+                </button>
               </form>
             </div>
             <div>
@@ -142,14 +135,14 @@ const AppFooter = () => {
               </div>
             </div>
           </div>
-        </Container>
+        </div>
       </div>
       <div className="flex items-center h-[70px] bg-primary">
-        <Container maxW={["95%", "95%", "95%", "95%", "1200px"]}>
+        <div className="w-full px-6 lg:w-[80%] lg:max-w-[1216px] mx-auto">
           <p className="font-normal text-[16px] text-center lg:text-left text-white">
             TheBox Company © 2022. All Rights Reserved
           </p>
-        </Container>
+        </div>
       </div>
     </footer>
   )
